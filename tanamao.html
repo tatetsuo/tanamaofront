@@ -5,25 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TáNaMão - Conectando você aos melhores profissionais</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            box-sizing: border-box;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-        .professional-card:hover {
-            transform: scale(1.02);
-            transition: all 0.3s ease;
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
@@ -38,10 +21,10 @@
                     <a href="#contato" class="text-gray-600 hover:text-purple-600 font-medium">Contato</a>
                 </nav>
                 <div class="flex space-x-4">
-                    <button class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 font-medium">
+                    <button id="btn-cliente" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 font-medium">
                         Sou Cliente
                     </button>
-                    <button class="border border-purple-600 text-purple-600 px-6 py-2 rounded-lg hover:bg-purple-50 font-medium">
+                    <button id="btn-profissional" class="border border-purple-600 text-purple-600 px-6 py-2 rounded-lg hover:bg-purple-50 font-medium">
                         Sou Profissional
                     </button>
                 </div>
@@ -49,30 +32,30 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-800 text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-5xl font-bold mb-6">Conectamos você aos melhores profissionais</h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
                 Encontre rapidamente o profissional ideal para suas necessidades. 
                 Programadores, diaristas, engenheiros, maridos de aluguel e muito mais!
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
+            <form class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
                 <div class="relative flex-1 w-full">
                     <input 
                         type="text" 
-                        placeholder="Que serviço você precisa?" 
+                        placeholder="Que serviço você precisa?"
+                        aria-label="Campo de busca de serviço"
+                        id="search-input"
                         class="w-full px-6 py-4 rounded-lg text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-purple-300"
                     >
                 </div>
-                <button class="bg-yellow-500 text-gray-800 px-8 py-4 rounded-lg hover:bg-yellow-400 font-bold text-lg whitespace-nowrap">
+                <button type="submit" id="search-button" class="bg-yellow-500 text-gray-800 px-8 py-4 rounded-lg hover:bg-yellow-400 font-bold text-lg whitespace-nowrap">
                     🔍 Buscar Agora
                 </button>
-            </div>
+            </form>
         </div>
     </section>
 
-    <!-- Serviços Section -->
     <section id="servicos" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -81,56 +64,56 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="service-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">💻</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Programação</h4>
                     <p class="text-gray-600">Desenvolvimento web, apps, sistemas e consultoria em TI</p>
                     <div class="mt-4 text-blue-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">🏠</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Limpeza</h4>
                     <p class="text-gray-600">Diaristas, faxineiras e serviços de limpeza profissional</p>
                     <div class="mt-4 text-green-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">🔧</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Engenharia</h4>
                     <p class="text-gray-600">Projetos, consultoria e execução de obras</p>
                     <div class="mt-4 text-orange-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">🔨</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Marido de Aluguel</h4>
                     <p class="text-gray-600">Reparos domésticos, montagem de móveis e pequenos consertos</p>
                     <div class="mt-4 text-purple-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">✂️</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Beleza</h4>
                     <p class="text-gray-600">Cabeleireiros, manicures, esteticistas e maquiadores</p>
                     <div class="mt-4 text-pink-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">🚗</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Transporte</h4>
                     <p class="text-gray-600">Motoristas particulares, mudanças e entregas</p>
                     <div class="mt-4 text-yellow-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">📚</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Educação</h4>
                     <p class="text-gray-600">Professores particulares, reforço escolar e cursos</p>
                     <div class="mt-4 text-indigo-600 font-medium">Ver profissionais →</div>
                 </div>
 
-                <div class="service-card bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-md cursor-pointer">
+                <div class="transition duration-300 hover:-translate-y-1 bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-md cursor-pointer">
                     <div class="text-4xl mb-4">🏥</div>
                     <h4 class="text-xl font-bold text-gray-800 mb-2">Saúde</h4>
                     <p class="text-gray-600">Cuidadores, fisioterapeutas e profissionais da saúde</p>
@@ -140,7 +123,6 @@
         </div>
     </section>
 
-    <!-- Profissionais em Destaque -->
     <section id="profissionais" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -149,7 +131,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="professional-card bg-white p-6 rounded-xl shadow-lg cursor-pointer">
+                <div class="professional-card transition duration-300 hover:scale-[1.02] bg-white p-6 rounded-xl shadow-lg cursor-pointer">
                     <div class="flex items-center mb-4">
                         <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                             PR
@@ -171,7 +153,7 @@
                     </div>
                 </div>
 
-                <div class="professional-card bg-white p-6 rounded-xl shadow-lg cursor-pointer">
+                <div class="professional-card transition duration-300 hover:scale-[1.02] bg-white p-6 rounded-xl shadow-lg cursor-pointer">
                     <div class="flex items-center mb-4">
                         <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                             GM
@@ -193,7 +175,7 @@
                     </div>
                 </div>
 
-                <div class="professional-card bg-white p-6 rounded-xl shadow-lg cursor-pointer">
+                <div class="professional-card transition duration-300 hover:scale-[1.02] bg-white p-6 rounded-xl shadow-lg cursor-pointer">
                     <div class="flex items-center mb-4">
                         <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                             PM
@@ -218,7 +200,6 @@
         </div>
     </section>
 
-    <!-- Como Funciona -->
     <section id="como-funciona" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -259,11 +240,9 @@
             </div>
         </div>
     </section>
-    <!-- App Download Section -->
     <section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Conteúdo -->
                 <div>
                     <h3 class="text-4xl font-bold mb-6">Baixe nosso App</h3>
                     <p class="text-xl mb-8">
@@ -308,18 +287,13 @@
                     </div>
                 </div>
                 
-                <!-- iPhone Mockup -->
                 <div class="flex justify-center lg:justify-end">
                     <div class="relative">
-                        <!-- iPhone Frame -->
                         <div class="w-80 h-[600px] bg-black rounded-[3rem] p-2 shadow-2xl">
                             <div class="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-                                <!-- Notch -->
                                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
                                 
-                                <!-- App Content -->
                                 <div class="h-full bg-gradient-to-br from-purple-50 to-indigo-50 pt-8">
-                                    <!-- Header -->
                                     <div class="px-6 py-4 bg-white shadow-sm">
                                         <div class="flex items-center justify-between">
                                             <div class="flex items-center">
@@ -332,7 +306,6 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- Search Bar -->
                                     <div class="px-6 py-4">
                                         <div class="bg-white rounded-xl px-4 py-3 shadow-sm flex items-center">
                                             <span class="text-gray-400 mr-2">🔍</span>
@@ -340,7 +313,6 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- Services Grid -->
                                     <div class="px-6">
                                         <h4 class="font-bold text-gray-800 mb-3">Serviços Populares</h4>
                                         <div class="grid grid-cols-2 gap-3">
@@ -367,7 +339,6 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- Recent Activity -->
                                     <div class="px-6 mt-6">
                                         <h4 class="font-bold text-gray-800 mb-3">Atividade Recente</h4>
                                         <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -386,7 +357,6 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- Bottom Navigation -->
                                     <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3">
                                         <div class="flex justify-around">
                                             <div class="text-center">
@@ -415,8 +385,7 @@
             </div>
         </div>
     </section>
-    <!-- CTA Section -->
-    <section class="gradient-bg text-white py-16">
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-800 text-white py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-4xl font-bold mb-6">Pronto para começar?</h3>
             <p class="text-xl mb-8">
@@ -433,7 +402,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contato" class="bg-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -496,29 +464,31 @@
             });
         });
 
-        // Funcionalidade de busca
-        document.querySelector('.gradient-bg button').addEventListener('click', function() {
-            const searchTerm = document.querySelector('.gradient-bg input').value;
-            if (searchTerm.trim()) {
-                alert(`Buscando por: "${searchTerm}"\n\nEm breve você será redirecionado para os resultados!`);
-            } else {
-                alert('Por favor, digite o serviço que você precisa.');
-            }
-        });
-
-        // Enter na busca
-        document.querySelector('.gradient-bg input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.querySelector('.gradient-bg button').click();
-            }
-        });
-
-        // Clique nos cards de serviço
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const serviceName = this.querySelector('h4').textContent;
-                alert(`Redirecionando para profissionais de ${serviceName}...`);
+        // Funcionalidade de busca (Usando o evento submit do formulário)
+        const searchForm = document.querySelector('section form');
+        const searchInput = document.getElementById('search-input');
+        
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o envio padrão do formulário
+                const searchTerm = searchInput.value;
+                if (searchTerm.trim()) {
+                    alert(`Buscando por: "${searchTerm}"\n\nEm breve você será redirecionado para os resultados!`);
+                } else {
+                    alert('Por favor, digite o serviço que você precisa.');
+                }
             });
+        }
+
+        // Clique nos cards de serviço (Usando uma classe comum para seleção mais robusta)
+        document.querySelectorAll('.transition.duration-300').forEach(card => {
+            // Verifica se é um card de serviço (que contém h4) para evitar pegar elementos aleatórios com 'transition'
+            if (card.closest('#servicos')) {
+                card.addEventListener('click', function() {
+                    const serviceName = this.querySelector('h4').textContent;
+                    alert(`Redirecionando para profissionais de ${serviceName}...`);
+                });
+            }
         });
 
         // Botões de contratar profissionais
@@ -530,17 +500,17 @@
             });
         });
 
-        // Botões principais do header
-        document.querySelector('button:contains("Sou Cliente")') || document.querySelectorAll('header button')[0].addEventListener('click', function() {
+        // Botões principais do header (Usando IDs para ser mais robusto)
+        document.getElementById('btn-cliente').addEventListener('click', function() {
             alert('Redirecionando para área do cliente...');
         });
 
-        document.querySelector('button:contains("Sou Profissional")') || document.querySelectorAll('header button')[1].addEventListener('click', function() {
+        document.getElementById('btn-profissional').addEventListener('click', function() {
             alert('Redirecionando para cadastro de profissional...');
         });
 
-        // Botões da seção CTA
-        document.querySelectorAll('.gradient-bg:last-of-type button').forEach((button, index) => {
+        // Botões da seção CTA (Seletor mais específico)
+        document.querySelector('.bg-gradient-to-r.from-indigo-600.to-purple-800.text-white.py-16').querySelectorAll('button').forEach((button, index) => {
             button.addEventListener('click', function() {
                 if (index === 0) {
                     alert('Redirecionando para busca de serviços...');
@@ -550,5 +520,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'987e640752d92755',t:'MTc1OTM0NzE5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
